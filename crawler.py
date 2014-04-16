@@ -19,8 +19,8 @@ obj.write('[')
 for one in com_list:
   #print one
   info = get(one)
-  obj.write('{ name:' + one.encode('utf-8') +',')
-  obj.write(' info: ' + json.dumps(info))
+  obj.write('{ "name": "' + one.encode('utf-8') +'",')
+  obj.write(' "info": ' + json.dumps(info))
   obj.write('},\n')
   obj.flush()
 obj.write(']')

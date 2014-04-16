@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+
 import json
 from glassdoor import get
 
@@ -15,10 +17,11 @@ print 'Len: ', len(com_list)
 obj = open(dest_path, 'w')
 obj.write('[')
 for one in com_list:
+  #print one
   info = get(one)
-  obj.write('{ name:' + one +',')
+  obj.write('{ name:' + one.encode('utf-8') +',')
   obj.write(json.dumps(info))
-  obj.write('},')
+  obj.write('},\n')
   obj.flush()
 obj.write(']')
 obj.close()
